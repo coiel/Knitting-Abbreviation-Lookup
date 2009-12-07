@@ -1,0 +1,10 @@
+%h2 Enter a knitting abbreviation
+%form{:action => '/lookup'}
+  %input{:type => 'text', :name => 'acronym', :id => 'acronym'}
+  %input{:type => 'submit'}
+- if @abbreviation
+  %p
+    = @abbreviation.meaning
+- if @not_found
+  %p
+    = @not_found
